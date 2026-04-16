@@ -1,7 +1,7 @@
 
 public class Bins {
     int s;
-    int[] x = new int[s];
+    int[] x;
     int minimum;
     int maximum;
     
