@@ -1,7 +1,9 @@
 public class Simulation {
 
     public static void main(String[] args) {
-        System.out.println("First Dice: " + Dice.dice());
+        Dice dice = new Dice(2);
+        int result = dice.tossAndSum();
+        System.out.println("Total 2 Dices= " + result);
     }
 
 
