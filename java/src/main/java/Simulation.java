@@ -5,6 +5,4 @@ public class Simulation {
         int result = dice.tossAndSum();
         System.out.println("Total 2 Dices= " + result);
     }
-
-
 }
