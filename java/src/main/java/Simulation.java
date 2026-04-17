@@ -53,15 +53,15 @@ public class Simulation {
 
     public static int getInput(Scanner scanner, String Prompt){
     while(true){
-        System.out.println("Please enter number of dice: ");
-        scanner.hasNextInt();
+        System.out.print(Prompt);
         if(!scanner.hasNextInt()){
             System.out.println("Invalid Input. Please input a number.");
+            scanner.next();
             continue;
         } 
         int value = scanner.nextInt();
 
-        if(value < 0){
+        if(value <= 0){
         System.out.println("Please enter positive number.");
         continue;
         }
