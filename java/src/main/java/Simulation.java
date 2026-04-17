@@ -12,14 +12,14 @@ public class Simulation {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter number of dice: ");
-        int nDice = scanner.nextInt();
-        System.out.println("Please enter number of toss: ");
-        int nToss = scanner.nextInt();
+        int nDice = getInput(scanner, "Please enter number of dice: ");
+        int nToss = getInput(scanner, "Please enter number of toss: ");
+        
         Simulation sim = new Simulation(nDice, nToss);
         sim.runSimulation();
         sim.printResult();
         scanner.close();
+        
     }
 
     public Simulation(int nDice, int nToss){
@@ -50,4 +50,24 @@ public class Simulation {
             System.out.println();
         }
     }
+
+    public static int getInput(Scanner scanner, String Prompt){
+    while(true){
+        System.out.println("Please enter number of dice: ");
+        scanner.hasNextInt();
+        if(!scanner.hasNextInt()){
+            System.out.println("Invalid Input. Please input a number.");
+            continue;
+        } 
+        int value = scanner.nextInt();
+
+        if(value < 0){
+        System.out.println("Please enter positive number.");
+        continue;
+        }
+        return value;
+    }
+
 }
+}
+
